@@ -1,0 +1,12 @@
+no-permission: "&cYou do not have permission to use this command!"
+
+plugin-prefix: "&8[&bNCE&8] "
+
+enable-flight-enchantment: true
+enable-soulbound-enchantment: true
+enable-telekinesis-enchantment: true
+enable-combine: true
+enable-flight-recipes: true
+enable-soulbound-recipes: true
+enable-telekinesis-recipes: true
+use-combine-permissions: false

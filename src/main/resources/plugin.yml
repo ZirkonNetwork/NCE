@@ -1,0 +1,31 @@
+name: NathansCustomEnchantments
+version: '${project.version}'
+main: nathan.enchants.NathansEnchants
+author: Elephant_1214
+api-version: 1.18
+commands:
+  nce:
+    description: Base command
+    usage: /<command> <args> <args1> <args2>
+permissions:
+  nce.command.items:
+    description: Allows the user to get a chestplate and pickaxe with the custom enchantments using /nce enchanteditems
+    default: op
+  nce.command.enchant:
+    description: Allows the user to add Telekinesis to their or another player's held item with /nce enchant <player> <telekinesis/flight>
+    default: op
+  nce.command.reload:
+    description: Allows the user to reload the config using /nce reload
+    default: op
+  nce.admin.flight:
+    description: Allows the user to use /fly from another plugin without it being turned off by the Flight enchantment check loop
+    default: op
+  nce.enchant.telekinesis:
+    description: Allows the user to use the Telekinesis enchantment when use-enchant-permissions is set to true in the config
+    default: false
+  nce.enchant.flight:
+    description: Allows the user to use the Flight enchantment when use-enchant-permissions is set to true in the config
+    default: false
+  nce.crafting.use:
+    description: Allows the user to use the drop enchanting system when use-combine-permissions is set to true in the config
+    default: false
