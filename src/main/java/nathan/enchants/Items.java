@@ -18,7 +18,7 @@ public final class Items {
 
         css.setAmount(1);
         cssMeta.addEnchant(Enchantment.LUCK, 1, true);
-        cssMeta.setDisplayName(ChatColor.GREEN + "Compressed Soul Sand");
+        cssMeta.setDisplayName(ChatColor.YELLOW + "Compressed Soul Sand");
         cssMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         css.setItemMeta(cssMeta);
         return css;
@@ -30,7 +30,7 @@ public final class Items {
 
         sg.setAmount(1);
         sgMeta.addEnchant(Enchantment.LUCK, 1, true);
-        sgMeta.setDisplayName(ChatColor.AQUA + "Soul Glass");
+        sgMeta.setDisplayName(ChatColor.YELLOW + "Soul Glass");
         sgMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         sg.setItemMeta(sgMeta);
         return sg;
@@ -42,7 +42,7 @@ public final class Items {
 
         soularium.setAmount(1);
         soulariumMeta.addEnchant(Enchantment.LUCK, 1, true);
-        soulariumMeta.setDisplayName(ChatColor.AQUA + "Soularium");
+        soulariumMeta.setDisplayName(ChatColor.YELLOW + "Soularium");
         soulariumMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         soularium.setItemMeta(soulariumMeta);
         return soularium;
@@ -55,7 +55,7 @@ public final class Items {
 
         sv.setAmount(1);
         svMeta.addEnchant(Enchantment.LUCK, 1, true);
-        svMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "Soul Vial");
+        svMeta.setDisplayName(ChatColor.AQUA + "Soul Vial");
         svMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         sv.setItemMeta(svMeta);
         return sv;
@@ -68,7 +68,7 @@ public final class Items {
 
         fsv.setAmount(1);
         fsvMeta.addEnchant(Enchantment.LUCK, 1, true);
-        fsvMeta.setDisplayName(ChatColor.DARK_PURPLE + "Filled Soul Vial");
+        fsvMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "Filled Soul Vial");
         fsvMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         fsvLore.add(ChatColor.DARK_GRAY + "A bottled soul taken from");
         fsvLore.add(ChatColor.DARK_GRAY + "an unsuspecting Enderman");
@@ -83,7 +83,7 @@ public final class Items {
 
         cep.setAmount(1);
         cepMeta.addEnchant(Enchantment.LUCK, 1, true);
-        cepMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "Compressed Ender Pearl");
+        cepMeta.setDisplayName(ChatColor.YELLOW + "Compressed Ender Pearl");
         cepMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         cep.setItemMeta(cepMeta);
         return cep;
@@ -95,7 +95,7 @@ public final class Items {
 
         cf.setAmount(1);
         cfMeta.addEnchant(Enchantment.LUCK, 1, true);
-        cfMeta.setDisplayName(ChatColor.GREEN + "Compressed Feather");
+        cfMeta.setDisplayName(ChatColor.YELLOW + "Compressed Feather");
         cfMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         cf.setItemMeta(cfMeta);
         return cf;

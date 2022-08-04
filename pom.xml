@@ -6,7 +6,7 @@
 
     <groupId>nathan.enchants</groupId>
     <artifactId>NathansCustomEnchantments</artifactId>
-    <version>4.0</version>
+    <version>4.0.1</version>
     <packaging>jar</packaging>
 
     <name>NathansCustomEnchantments</name>

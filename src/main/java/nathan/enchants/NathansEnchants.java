@@ -21,7 +21,7 @@ import static nathan.enchants.enchantments.Enchantments.FLIGHT;
 
 @SuppressWarnings("ConstantConditions")
 public final class NathansEnchants extends JavaPlugin {
-    public static final String VERSION = "4.0";
+    public static final String VERSION = "4.0.1";
     public static Configuration config;
     public static Logger logger;
     public static MainCommand mainCommand;
@@ -52,10 +52,6 @@ public final class NathansEnchants extends JavaPlugin {
         //ItemDrop.supportedItemsFlight = (List<String>) config.getList("support-items-flight");
         //ItemDrop.supportedItemsSoulbound = (List<String>) config.getList("supported-items-soulbound");
         //ItemDrop.telekinesisSupportedMaterials = (List<String>) config.getList("support-items-telekinesis");
-    }
-
-    @Override
-    public void onDisable() {
     }
 
     public void initSubcommands() {
