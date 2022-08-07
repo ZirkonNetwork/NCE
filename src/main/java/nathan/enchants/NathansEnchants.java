@@ -21,7 +21,7 @@ import static nathan.enchants.enchantments.Enchantments.FLIGHT;
 
 @SuppressWarnings("ConstantConditions")
 public final class NathansEnchants extends JavaPlugin {
-    public static final String VERSION = "4.0.1";
+    public static final String VERSION = "4.1.0";
     public static Configuration config;
     public static Logger logger;
     public static MainCommand mainCommand;
