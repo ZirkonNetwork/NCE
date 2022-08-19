@@ -1,7 +1,8 @@
 name: NathansCustomEnchantments
 version: "${project.version}"
 main: nathan.enchants.NathansEnchants
-author: Elephant_1214
+api-version: 1.18
+author: "Elephant_1214"
 commands:
   nce:
     description: Base command
