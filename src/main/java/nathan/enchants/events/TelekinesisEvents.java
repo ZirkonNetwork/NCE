@@ -48,7 +48,7 @@ public class TelekinesisEvents implements Listener {
                 (!config.getBoolean("use-enchant-permissions") || player.hasPermission("nce.enchant.telekinesis")) &&
                 (player.getGameMode() != GameMode.CREATIVE || player.getGameMode() != GameMode.SPECTATOR) &&
                 (!(brokenBlock.getState() instanceof Container) || ((Container) brokenBlock).getBlock().isEmpty())) {
-            List<ItemStack> eventDrops = new ArrayList<>(brokenBlock.getDrops(itemUsed));
+            List<ItemStack> eventDrops = new ArrayList<>();
             Material typeBroken = brokenBlock.getType();
             Location brokenBlockLocation = brokenBlock.getLocation();
 
