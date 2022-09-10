@@ -31,7 +31,7 @@ public class TelekinesisEvents implements Listener {
         List<ItemStack> drops = new ArrayList<>();
 
         while ((location.getBlock().getType() == typeBroken) || (twoMaterials && (location.getBlock().getType() == secondMaterial))) {
-            if (!location.getBlock().getDrops().isEmpty()) drops.addAll(location.getBlock().getDrops(itemUsed));
+            if (!location.getBlock().getDrops(itemUsed).isEmpty()) drops.addAll(location.getBlock().getDrops(itemUsed));
             location.getBlock().setType(replacementMaterial);
             location.add(0D, y, 0D);
         }
