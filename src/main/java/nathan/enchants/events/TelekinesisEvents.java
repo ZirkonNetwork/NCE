@@ -30,7 +30,7 @@ public class TelekinesisEvents implements Listener {
         double y = topBlock ? -1D : 1D;
         List<ItemStack> drops = new ArrayList<>();
 
-        while ((location.getBlock().getType() == typeBroken) || (twoMaterials && (location.getBlock().getType() == secondMaterial))) {
+        while (location.getBlock().getType() == typeBroken || (twoMaterials && location.getBlock().getType() == secondMaterial)) {
             if (!location.getBlock().getDrops(itemUsed).isEmpty()) drops.addAll(location.getBlock().getDrops(itemUsed));
             location.getBlock().setType(replacementMaterial);
             location.add(0D, y, 0D);
@@ -41,42 +41,42 @@ public class TelekinesisEvents implements Listener {
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
-        Block brokenBlock = event.getBlock();
+        Block blockBroken = event.getBlock();
         ItemStack itemUsed = player.getInventory().getItemInMainHand();
 
-        if (itemUsed.getType() != Material.AIR && itemUsed.getItemMeta() != null && itemUsed.getItemMeta().hasEnchant(TELEKINESIS) &&
-                (!config.getBoolean("use-enchant-permissions") || player.hasPermission("nce.enchant.telekinesis")) &&
-                (player.getGameMode() != GameMode.CREATIVE || player.getGameMode() != GameMode.SPECTATOR) &&
-                (!(brokenBlock instanceof Container) || ((Container) brokenBlock).getBlock().isEmpty())) {
+       if ((itemUsed.getType() != Material.AIR && itemUsed.getItemMeta() != null && itemUsed.getItemMeta().hasEnchant(TELEKINESIS)) &&
+               (!config.getBoolean("use-enchant-permissions") || player.hasPermission("nce.enchant.telekinesis")) &&
+               (player.getGameMode() != GameMode.CREATIVE || player.getGameMode() != GameMode.SPECTATOR) &&
+               (blockBroken.getState() != null) && (!(blockBroken.getState() instanceof Container container) || container.getInventory().isEmpty() || blockBroken.getType() == Material.SHULKER_BOX)) {
             List<ItemStack> eventDrops = new ArrayList<>();
-            Material typeBroken = brokenBlock.getType();
-            Location brokenBlockLocation = brokenBlock.getLocation();
+            Material typeBroken = blockBroken.getType();
+            Location brokenBlockLocation = blockBroken.getLocation();
 
             event.setDropItems(false);
 
             switch (typeBroken) {
                 case WEEPING_VINES_PLANT ->
-                        eventDrops.addAll(checkCrop(true, typeBroken, true, Material.WEEPING_VINES, brokenBlockLocation.add(0D, -1D, 0D), itemUsed, Material.AIR));
+                        eventDrops.addAll(checkCrop(true, typeBroken, true, Material.WEEPING_VINES, brokenBlockLocation, itemUsed, Material.AIR));
                 case TWISTING_VINES_PLANT ->
-                        eventDrops.addAll(checkCrop(false, typeBroken, true, Material.TWISTING_VINES, brokenBlockLocation.add(0D, 1D, 0D), itemUsed, Material.AIR));
+                        eventDrops.addAll(checkCrop(false, typeBroken, true, Material.TWISTING_VINES, brokenBlockLocation, itemUsed, Material.AIR));
                 case BIG_DRIPLEAF ->
-                        eventDrops.addAll(checkCrop(true, typeBroken, true, Material.BIG_DRIPLEAF_STEM, brokenBlockLocation.add(0D, -1D, 0D), itemUsed, Material.AIR));
+                        eventDrops.addAll(checkCrop(true, typeBroken, true, Material.BIG_DRIPLEAF_STEM, brokenBlockLocation, itemUsed, Material.AIR));
                 case SUGAR_CANE, BAMBOO ->
-                        eventDrops.addAll(checkCrop(false, typeBroken, false, Material.AIR, brokenBlockLocation.add(0D, 1D, 0D), itemUsed, Material.AIR));
+                        eventDrops.addAll(checkCrop(false, typeBroken, false, Material.AIR, brokenBlockLocation, itemUsed, Material.AIR));
                 case KELP_PLANT, KELP ->
-                        eventDrops.addAll(checkCrop(false, typeBroken, true, Material.KELP, brokenBlockLocation.add(0D, 1D, 0D), itemUsed, Material.WATER));
+                        eventDrops.addAll(checkCrop(false, typeBroken, true, Material.KELP, brokenBlockLocation, itemUsed, Material.WATER));
                 case CAVE_VINES_PLANT, VINE -> {
                     if (itemUsed.getType() == Material.SHEARS || itemUsed.containsEnchantment(Enchantment.SILK_TOUCH)) {
-                        eventDrops.addAll(checkCrop(true, typeBroken, true, Material.CAVE_VINES, brokenBlockLocation.add(0D, -1D, 0D), itemUsed, Material.AIR));
+                        eventDrops.addAll(checkCrop(true, typeBroken, true, Material.CAVE_VINES, brokenBlockLocation, itemUsed, Material.AIR));
                     }
                 }
                 case TALL_SEAGRASS, SEAGRASS -> {
                     if (itemUsed.getType() == Material.SHEARS || itemUsed.containsEnchantment(Enchantment.SILK_TOUCH)) {
-                        eventDrops.addAll(checkCrop(false, typeBroken, true, Material.SEAGRASS, brokenBlockLocation.add(0D, 1D, 0D), itemUsed, Material.WATER));
+                        eventDrops.addAll(checkCrop(false, typeBroken, true, Material.SEAGRASS, brokenBlockLocation, itemUsed, Material.WATER));
                     }
                 }
                 default -> {
-                    Collection<ItemStack> drops = brokenBlock.getDrops(player.getInventory().getItemInMainHand());
+                    Collection<ItemStack> drops = blockBroken.getDrops(player.getInventory().getItemInMainHand());
 
                     if (drops.isEmpty()) return;
                     eventDrops.add(drops.iterator().next());
