@@ -27,7 +27,7 @@ public class ItemDrop implements Listener {
      * {@code public static List<String> supportedItemsFlight = null;}
      * {@code public static List<EnchantmentTarget> supportedItemsSoulbound = Arrays.asList(BREAKABLE, WEARABLE);}
      */
-    private static final List<String> telekinesisSupportedMaterials = Arrays.asList("axe", "hoe", "shovel", "shears", "sword");
+    public static final List<String> telekinesisSupportedMaterials = Arrays.asList("axe", "hoe", "shovel", "shears", "sword");
     private static final List<Material> workstations = Arrays.asList(Material.ANVIL, Material.CHIPPED_ANVIL, Material.DAMAGED_ANVIL);
 
     @EventHandler(priority = EventPriority.HIGH)
