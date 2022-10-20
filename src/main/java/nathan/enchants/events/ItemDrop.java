@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static nathan.enchants.Items.*;
+import static nathan.enchants.constants.Items.*;
 import static nathan.enchants.NathansEnchants.config;
 import static nathan.enchants.NathansEnchants.plugin;
 import static nathan.enchants.enchantments.Enchantments.*;

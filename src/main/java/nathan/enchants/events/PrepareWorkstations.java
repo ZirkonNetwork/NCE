@@ -12,7 +12,7 @@ import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.SmithingInventory;
 
-import static nathan.enchants.Items.*;
+import static nathan.enchants.constants.Items.*;
 import static nathan.enchants.NathansEnchants.config;
 import static nathan.enchants.enchantments.Enchantments.*;
 

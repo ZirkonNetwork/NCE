@@ -1,4 +1,4 @@
-package nathan.enchants;
+package nathan.enchants.constants;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 
-import static nathan.enchants.Items.*;
+import static nathan.enchants.constants.Items.*;
 import static nathan.enchants.NathansEnchants.plugin;
 
 public final class Recipes {

@@ -16,12 +16,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-import static nathan.enchants.Recipes.*;
+import static nathan.enchants.constants.Recipes.*;
 import static nathan.enchants.enchantments.Enchantments.FLIGHT;
 
 @SuppressWarnings("ConstantConditions")
 public final class NathansEnchants extends JavaPlugin {
-    public static final String VERSION = "4.2.1";
+    public static final String VERSION = "4.3.0";
     public static Configuration config;
     public static Logger logger;
     public static MainCommand mainCommand;

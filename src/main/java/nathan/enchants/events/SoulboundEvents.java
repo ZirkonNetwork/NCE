@@ -23,8 +23,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
-import static nathan.enchants.Items.filledSoulVial;
-import static nathan.enchants.Items.emptySoulVial;
+import static nathan.enchants.constants.Items.filledSoulVial;
+import static nathan.enchants.constants.Items.emptySoulVial;
 
 @SuppressWarnings("ConstantConditions")
 public class SoulboundEvents implements Listener {

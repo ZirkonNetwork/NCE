@@ -47,7 +47,7 @@ public class TelekinesisEvents implements Listener {
        if ((itemUsed.getType() != Material.AIR && itemUsed.getItemMeta() != null && itemUsed.getItemMeta().hasEnchant(TELEKINESIS)) &&
                (!config.getBoolean("use-enchant-permissions") || player.hasPermission("nce.enchant.telekinesis")) &&
                (player.getGameMode() != GameMode.CREATIVE || player.getGameMode() != GameMode.SPECTATOR) &&
-               (blockBroken.getState() != null) && (!(blockBroken.getState() instanceof Container container) || container.getInventory().isEmpty() || blockBroken.getType() == Material.SHULKER_BOX)) {
+               (blockBroken.getState() != null) && (!(blockBroken.getState() instanceof Container container) || container.getInventory().isEmpty() || blockBroken.getType().name().endsWith("SHULKER_BOX"))) {
             List<ItemStack> eventDrops = new ArrayList<>();
             Material typeBroken = blockBroken.getType();
             Location brokenBlockLocation = blockBroken.getLocation();

@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import java.util.Arrays;
 import java.util.List;
 
-import static nathan.enchants.Recipes.*;
+import static nathan.enchants.constants.Recipes.*;
 
 public class GiveCustomRecipes implements Listener {
     private final List<NamespacedKey> customRecipes = Arrays.asList(compressedSSRecipe().getKey(), soulGlassRecipe().getKey(),

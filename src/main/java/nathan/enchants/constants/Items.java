@@ -1,4 +1,4 @@
-package nathan.enchants;
+package nathan.enchants.constants;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
